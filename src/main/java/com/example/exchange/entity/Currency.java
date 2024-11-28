@@ -1,5 +1,6 @@
 package com.example.exchange.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,26 +16,31 @@ import java.util.List;
 @Entity
 @Getter
 @Table(name = "currency")
-public class Currency {
+public class Currency extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String currencyName;
 
     private BigDecimal exchangeRate;
 
-    private String status;
+    private String symbol;
 
     @OneToMany(mappedBy = "currency")
-    private List<UserCurrency> userCurrencies = new ArrayList<>();
+    private final List<UserCurrency> userCurrencies = new ArrayList<>();
 
     public Currency() {}
 
-    public Currency(String currencyName, BigDecimal exchangeRate, String status) {
+    public Currency(String currencyName, BigDecimal exchangeRate, String symbol) {
         this.currencyName = currencyName;
         this.exchangeRate = exchangeRate;
-        this.status = status;
+        this.symbol = symbol;
+    }
+
+    public void updateExchangeRate(BigDecimal exchangeRate) {
+        this.exchangeRate = exchangeRate;
     }
 }

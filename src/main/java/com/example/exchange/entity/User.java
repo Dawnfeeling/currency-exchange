@@ -1,5 +1,6 @@
 package com.example.exchange.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ import java.util.List;
 @Entity
 @Getter
 @Table(name = "user")
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +25,8 @@ public class User {
 
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<UserCurrency> userCurrencies = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private final List<UserCurrency> userCurrencies = new ArrayList<>();
 
     public User() {}
 
