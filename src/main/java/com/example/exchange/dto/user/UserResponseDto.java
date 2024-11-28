@@ -1,15 +1,15 @@
-package com.example.exchange.dto;
+package com.example.exchange.dto.user;
 
 import lombok.Getter;
 
 @Getter
 public class UserResponseDto {
 
-    private Long id;
+    private final Long id;
 
-    private String name;
+    private final String name;
 
-    private String email;
+    private final String email;
 
     public UserResponseDto(Long id, String name, String email) {
         this.id = id;

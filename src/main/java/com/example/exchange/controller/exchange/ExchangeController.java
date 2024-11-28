@@ -1,8 +1,9 @@
-package com.example.exchange.controller;
+package com.example.exchange.controller.exchange;
 
-import com.example.exchange.dto.ExchangeRequestDto;
-import com.example.exchange.dto.ExchangeResponseDto;
-import com.example.exchange.service.ExchangeService;
+import com.example.exchange.dto.exchange.ExchangeRequestDto;
+import com.example.exchange.dto.exchange.ExchangeResponseDto;
+import com.example.exchange.service.exchange.ExchangeService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class ExchangeController {
     @PostMapping
     public ResponseEntity<ExchangeResponseDto> exchange(
             @PathVariable("user_id") Long userId,
-            @RequestBody ExchangeRequestDto dto) {
+            @Valid @RequestBody ExchangeRequestDto dto) {
 
         ExchangeResponseDto exchangeResponseDto = exchangeService.exchange(userId, dto.getCurrencyName(), dto.getAmount());
 

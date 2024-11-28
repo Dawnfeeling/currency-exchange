@@ -1,5 +1,8 @@
-package com.example.exchange.entity;
+package com.example.exchange.entity.exchange;
 
+import com.example.exchange.entity.BaseEntity;
+import com.example.exchange.entity.currency.Currency;
+import com.example.exchange.entity.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

@@ -1,6 +1,6 @@
-package com.example.exchange.service;
+package com.example.exchange.service.currency;
 
-import com.example.exchange.dto.CurrencyResponseDto;
+import com.example.exchange.dto.currency.CurrencyResponseDto;
 
 import java.math.BigDecimal;
 import java.util.List;

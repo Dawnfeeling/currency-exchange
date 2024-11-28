@@ -1,8 +1,9 @@
-package com.example.exchange.controller;
+package com.example.exchange.controller.user;
 
-import com.example.exchange.dto.UserRequestDto;
-import com.example.exchange.dto.UserResponseDto;
-import com.example.exchange.service.UserService;
+import com.example.exchange.dto.user.UserRequestDto;
+import com.example.exchange.dto.user.UserResponseDto;
+import com.example.exchange.service.user.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<UserResponseDto> createUser(@RequestBody UserRequestDto dto) {
+    public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserRequestDto dto) {
 
         UserResponseDto userResponseDto = userService.createUser(dto.getName(), dto.getEmail());
 

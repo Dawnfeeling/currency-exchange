@@ -1,6 +1,6 @@
-package com.example.exchange.service;
+package com.example.exchange.service.user;
 
-import com.example.exchange.dto.UserResponseDto;
+import com.example.exchange.dto.user.UserResponseDto;
 
 public interface UserService {
 

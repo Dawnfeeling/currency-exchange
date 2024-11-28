@@ -1,6 +1,6 @@
-package com.example.exchange.dto;
+package com.example.exchange.dto.currency;
 
-import com.example.exchange.entity.Currency;
+import com.example.exchange.entity.currency.Currency;
 import lombok.Getter;
 
 import java.math.BigDecimal;

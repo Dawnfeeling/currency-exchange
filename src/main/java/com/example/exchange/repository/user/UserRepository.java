@@ -1,6 +1,6 @@
-package com.example.exchange.repository;
+package com.example.exchange.repository.user;
 
-import com.example.exchange.entity.User;
+import com.example.exchange.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
-package com.example.exchange.repository;
+package com.example.exchange.repository.exchange;
 
-import com.example.exchange.entity.UserCurrency;
+import com.example.exchange.entity.exchange.UserCurrency;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

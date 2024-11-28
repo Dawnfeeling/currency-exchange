@@ -1,12 +1,12 @@
-package com.example.exchange.service;
+package com.example.exchange.service.exchange;
 
-import com.example.exchange.dto.ExchangeResponseDto;
-import com.example.exchange.entity.Currency;
-import com.example.exchange.entity.User;
-import com.example.exchange.entity.UserCurrency;
-import com.example.exchange.repository.CurrencyRepository;
-import com.example.exchange.repository.ExchangeRepository;
-import com.example.exchange.repository.UserRepository;
+import com.example.exchange.dto.exchange.ExchangeResponseDto;
+import com.example.exchange.entity.currency.Currency;
+import com.example.exchange.entity.user.User;
+import com.example.exchange.entity.exchange.UserCurrency;
+import com.example.exchange.repository.currency.CurrencyRepository;
+import com.example.exchange.repository.exchange.ExchangeRepository;
+import com.example.exchange.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

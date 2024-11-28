@@ -1,16 +1,13 @@
-package com.example.exchange.dto;
+package com.example.exchange.dto.currency;
 
 import lombok.Getter;
 
 import java.math.BigDecimal;
 
 @Getter
-public class CurrencyRequestDto {
+public class UpdateCurrencyRequestDto {
 
     private String currencyName;
 
     private BigDecimal exchangeRate;
-
-    private String symbol;
-
 }

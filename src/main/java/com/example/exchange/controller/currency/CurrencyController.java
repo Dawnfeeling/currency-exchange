@@ -1,9 +1,9 @@
-package com.example.exchange.controller;
+package com.example.exchange.controller.currency;
 
-import com.example.exchange.dto.CurrencyRequestDto;
-import com.example.exchange.dto.CurrencyResponseDto;
-import com.example.exchange.dto.UpdateCurrencyRequestDto;
-import com.example.exchange.service.CurrencyService;
+import com.example.exchange.dto.currency.CurrencyRequestDto;
+import com.example.exchange.dto.currency.CurrencyResponseDto;
+import com.example.exchange.dto.currency.UpdateCurrencyRequestDto;
+import com.example.exchange.service.currency.CurrencyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
