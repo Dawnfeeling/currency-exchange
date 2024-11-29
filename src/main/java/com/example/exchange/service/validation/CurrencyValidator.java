@@ -34,6 +34,7 @@ public class CurrencyValidator {
     }
 
     private boolean isInvalidExchangeRate(BigDecimal exchangeRate) {
+        //null이거나 0보다 작으면 true
         return exchangeRate == null || exchangeRate.compareTo(BigDecimal.ZERO) <= 0;
     }
 }

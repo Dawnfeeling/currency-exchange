@@ -1,5 +1,6 @@
 package com.example.exchange.repository.exchange;
 
+import com.example.exchange.dto.exchange.ExchangeGroupResponseDto;
 import com.example.exchange.entity.exchange.UserCurrency;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,4 +19,10 @@ public interface ExchangeRepository extends JpaRepository<UserCurrency, Long> {
         return findById(id).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 환전 기록이 없습니다."));
     }
+
+    @Query("SELECT new com.example.exchange.dto.exchange.ExchangeGroupResponseDto(COUNT(e), SUM(e.amountBeforeExchange)) " +
+            "FROM UserCurrency e " +
+            "WHERE e.user.id =:userId " +
+            "GROUP BY e.user.id" )
+    List<ExchangeGroupResponseDto> findExchangeGroupsByUserId(@Param("userId") Long userId);
 }

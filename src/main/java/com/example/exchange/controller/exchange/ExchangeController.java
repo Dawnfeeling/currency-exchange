@@ -1,5 +1,6 @@
 package com.example.exchange.controller.exchange;
 
+import com.example.exchange.dto.exchange.ExchangeGroupResponseDto;
 import com.example.exchange.dto.exchange.ExchangeRequestDto;
 import com.example.exchange.dto.exchange.ExchangeResponseDto;
 import com.example.exchange.service.exchange.ExchangeService;
@@ -40,6 +41,14 @@ public class ExchangeController {
         List<ExchangeResponseDto> exchangeResponseDtoList = exchangeService.findAllExchange(userId);
 
         return new ResponseEntity<>(exchangeResponseDtoList, HttpStatus.OK);
+    }
+
+    @GetMapping("/group")
+    public ResponseEntity<ExchangeGroupResponseDto> findAllExchangesGroup(@PathVariable("user_id") Long userId) {
+
+        ExchangeGroupResponseDto exchangeGroupResponseDto = exchangeService.groupExchange(userId);
+
+        return new ResponseEntity<>(exchangeGroupResponseDto, HttpStatus.OK);
     }
 
     @PatchMapping("/{id}")

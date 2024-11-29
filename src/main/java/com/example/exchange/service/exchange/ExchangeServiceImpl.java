@@ -1,5 +1,6 @@
 package com.example.exchange.service.exchange;
 
+import com.example.exchange.dto.exchange.ExchangeGroupResponseDto;
 import com.example.exchange.dto.exchange.ExchangeResponseDto;
 import com.example.exchange.entity.currency.Currency;
 import com.example.exchange.entity.user.User;
@@ -58,6 +59,7 @@ public class ExchangeServiceImpl implements ExchangeService {
                 .toList();
     }
 
+    //환전 기록 취소 변경
     @Override
     @Transactional
     public ExchangeResponseDto cancelledExchange(Long id) {
@@ -72,4 +74,14 @@ public class ExchangeServiceImpl implements ExchangeService {
                 userCurrency.getAmountAfterExchange(),
                 userCurrency.getStatus());
     }
+
+    @Override
+    public ExchangeGroupResponseDto groupExchange(Long userId) {
+        List<ExchangeGroupResponseDto> exchangeGroupResponseDtoList =
+                exchangeRepository.findExchangeGroupsByUserId(userId);
+
+        return exchangeGroupResponseDtoList.get(0);
+    }
+
+
 }
